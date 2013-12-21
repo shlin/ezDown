@@ -1,7 +1,9 @@
 package FreeMe2;
 
 public class CONTKEY {
-	static char[] ckey = new char[Global.intMS_BN_LEN];
-	static char[] keyhash = new char[20];
-	static int ckeylen;
+	int MS_BN_LEN = 20;
+	short[] ckey = new short[MS_BN_LEN];
+	short[] keyhash = new short[20];
+	int ckeylen;
+
 }
