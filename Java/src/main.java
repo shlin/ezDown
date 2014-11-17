@@ -16,18 +16,19 @@ public class main {
 		// String strUrl =
 		// "http://www.mymusic.net.tw/index.gsp#!http://www.mymusic.net.tw/album/show/165257";
 		String strUrl = javax.swing.JOptionPane.showInputDialog("Input URL");
-		Pattern p = Pattern.compile("(.+?)#!(.+)");
-		Matcher m = p.matcher(strUrl);
+//		String strUrl = "http://www.mymusic.net.tw/album/show/225797";
+//		Pattern p = Pattern.compile("(.+?)#!(.+)");
+//		Matcher m = p.matcher(strUrl);
 
-		if (m.find()) {
-			strUrl = m.group(2);
+//		if (m.find()) {
+//			strUrl = m.group(2);
 			ezAnalyzer tmp = new ezAnalyzer();
 			tmp.setMap(SongMap);
 			tmp.setURL(strUrl);
 
 			tmp.start();
 			tmp.join();
-		}
+//		}
 
 		// Download task
 		Collection a = SongMap.values();

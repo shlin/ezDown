@@ -16,14 +16,14 @@ public class Song {
 
 	private void convertSongName() {
 		// Special charset convert
-		name = name.replaceAll("\\?", "�H");
-		name = name.replaceAll("\\\\", "��");
-		name = name.replaceAll("\\/", "��");
-		name = name.replaceAll(":", "�G");
-		name = name.replaceAll("\"", "��");
-		name = name.replaceAll("<", "��");
-		name = name.replaceAll(">", "��");
-		name = name.replaceAll("\\|", "�U");
+		name = name.replaceAll("\\?", "？");
+		name = name.replaceAll("\\\\", "／");
+		name = name.replaceAll("\\/", "＼");
+		name = name.replaceAll(":", "：");
+		name = name.replaceAll("\"", "”");
+		name = name.replaceAll("<", "＜");
+		name = name.replaceAll(">", "＞");
+		name = name.replaceAll("\\|", "｜");
 	}
 
 	public void setSize(int size) {

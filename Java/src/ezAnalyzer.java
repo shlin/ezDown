@@ -24,6 +24,7 @@ public class ezAnalyzer extends Thread {
 	private Matcher mSongSrc = null;
 	private int songNum = 0;
 
+	// javascript:play('p000234-a0225797-s000008-t001-c9')	
 	// <a href="/song/show?song_id=p000002-a0164901-s058008-t001-c7">笨蛋</a>
 	// http://drm.ezpeer.com/p000012/s000005/a0080563/stm_p000012-a0080563-s000005-t003-c0.wma
 
@@ -36,15 +37,15 @@ public class ezAnalyzer extends Thread {
 			infile = new Scanner(input);
 			while (infile.hasNext()) {
 				srcLine = new String(infile.nextLine().getBytes("UTF-8"));
-				// System.out.println(srcLine);
+//				 System.out.println(srcLine);
 				mStart = pStart.matcher(srcLine);
 
 				if (mStart.find() || stateEnable) {
-					// System.out.println(srcLine);
+//					 System.out.println(srcLine);
 
 					mSongID = pSongID.matcher(srcLine);
 					if (mSongID.find()) {
-						System.out.println(srcLine);
+//						System.out.println(srcLine);
 						mSongSrc = pSongSrc.matcher(srcLine);
 						if (mSongSrc.find()) {
 							songNum = Integer.parseInt(mSongID.group(4)
@@ -57,9 +58,9 @@ public class ezAnalyzer extends Thread {
 										+ mSongID.group(2) + "/stm_"
 										+ mSongID.group(0) + ".wma";
 							}
-							// System.out.println(songNum + " " +
-							// mSongSrc.group(1) + " " + mSongSrc.group(2) + " "
-							// + dstLine);
+							 System.out.println(songNum + " " +
+							 mSongSrc.group(1) + " " + mSongSrc.group(2) + " "
+							 + dstLine);
 							SongMap.put(songNum,
 									new Song(songNum, mSongSrc.group(2),
 											dstLine));
